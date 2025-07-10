@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartGear - Landing Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/New_Logo_Example.svg/512px-New_Logo_Example.svg.png" alt="logo" id="header-img">
+    <nav id="nav-bar">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#video-section" class="nav-link">How It Works</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to SmartGear</h1>
+    <p>The ultimate productivity companion.</p>
+
+    <form id="form" action="https://www.freecodecamp.com/email-submit" method="POST">
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      <input type="submit" id="submit" value="Get Started" />
+    </form>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features">
+    <div class="feature">
+      <h2>Fast Performance</h2>
+      <p>Lightning speed response with seamless multitasking.</p>
+    </div>
+    <div class="feature">
+      <h2>Smart Integration</h2>
+      <p>Connect easily with all your favorite tools and apps.</p>
+    </div>
+    <div class="feature">
+      <h2>Premium Design</h2>
+      <p>Elegant, durable, and built for every lifestyle.</p>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section id="video-section">
+    <h2>See SmartGear in Action</h2>
+    <iframe 
+      id="video" 
+      width="560" 
+      height="315" 
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+      title="Product Demo Video" 
+      frameborder="0" 
+      allowfullscreen>
+    </iframe>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing">
+    <div class="price-card">
+      <h3>Basic</h3>
+      <p>$19/month</p>
+      <ul>
+        <li>Essential tools</li>
+        <li>Email support</li>
+        <li>1 device</li>
+      </ul>
+    </div>
+    <div class="price-card popular">
+      <h3>Pro</h3>
+      <p>$39/month</p>
+      <ul>
+        <li>All basic features</li>
+        <li>Priority support</li>
+        <li>3 devices</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <h3>Enterprise</h3>
+      <p>$99/month</p>
+      <ul>
+        <li>Full access</li>
+        <li>Dedicated support</li>
+        <li>Unlimited devices</li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>
