@@ -101,7 +101,7 @@ function App()
 					<button
 						id="new-quote"
 						onClick={nextQuote}
-						style={{ backgroundColor: color, color: "white", padding: "10px 20px", border: "none", borderRadius: "5px" }}
+						style={{ backgroundColor: color, color: "white"}}
 					>
 						New Quote
 					</button>
