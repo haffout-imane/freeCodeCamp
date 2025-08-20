@@ -1,0 +1,120 @@
+/* General dark theme */
+body {
+  margin: 0;
+  background: #1e1e1e;
+  color: #ddd;
+  font-family: "Fira Code", monospace;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Editor styling */
+.editor-wrapper {
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid #333;
+}
+
+.editor-toolbar {
+  padding: 10px;
+  background: #2d2d2d;
+  border-bottom: 1px solid #444;
+  text-align: right;
+}
+
+.editor-toolbar button {
+  background: #444;
+  border: none;
+  padding: 6px 12px;
+  color: #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.editor-toolbar button:hover {
+  background: #666;
+}
+
+/* Line numbers + editor side-by-side */
+.editor-container {
+  flex: 1;
+  display: flex;
+}
+
+.line-numbers {
+  background: #2a2a2a;
+  color: #888;
+  padding: 10px;
+  text-align: right;
+  user-select: none;
+}
+
+.line-numbers div {
+  height: 1.5em;
+}
+
+#editor {
+  flex: 1;
+  background: #1e1e1e;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  resize: none;
+  outline: none;
+  font-size: 14px;
+  line-height: 1.5em;
+  font-family: "Fira Code", monospace;
+}
+
+/* Resizer bar */
+.resizer {
+  width: 5px;
+  background: #444;
+  cursor: col-resize;
+  transition: background 0.2s;
+}
+.resizer:hover {
+  background: #61dafb;
+}
+
+/* Preview section */
+.preview-container {
+  background: #121212;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+#preview {
+  color: #ddd;
+}
+
+#preview h1,
+#preview h2,
+#preview h3 {
+  color: #61dafb;
+}
+
+#preview code {
+  background: #333;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+#preview pre {
+  background: #2a2a2a;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+#preview blockquote {
+  border-left: 3px solid #61dafb;
+  margin: 10px 0;
+  padding-left: 10px;
+  color: #aaa;
+}
