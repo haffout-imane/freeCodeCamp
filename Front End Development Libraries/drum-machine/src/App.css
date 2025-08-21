@@ -1,0 +1,110 @@
+.App {
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* allows absolute children layering */
+  overflow: hidden; /* keep Prism contained */
+}
+
+/* make prism fill the whole background */
+.prism-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* stay at back */
+}
+
+/* drum machine above prism */
+#drum-machine {
+  position: relative;
+  z-index: 1; /* on top */
+}
+
+/* --- Layout --- */
+.drum-set {
+  position: relative;
+  width: 700px;  /* bigger drum kit */
+  height: 600px;
+}
+
+/* --- Base drum style --- */
+.drum-pad {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #eee, #bbb 70%, #888 100%);
+  border: 2px solid #222;
+  box-shadow: inset -5px -5px 15px rgba(0,0,0,0.5),
+              inset 5px 5px 15px rgba(255,255,255,0.2),
+              0 8px 20px rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #111;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.1s ease;
+}
+
+.drum:active {
+  transform: scale(0.95); /* press effect */
+}
+
+/* --- Specific drums --- */
+
+/* tom-toms */
+.tom {
+  width: 140px;
+  height: 140px;
+  top: 160px;
+}
+#_Q { left: 150px; }
+#_W { right: 240px; }
+
+/* snare */
+.snare {
+  width: 150px;
+  height: 150px;
+  top: 280px;
+  left: 20px;
+  background: radial-gradient(circle at 30% 30%, #f5f5f5, #ddd 70%, #aaa 100%);
+}
+
+/* floor tom */
+.floor-tom {
+  width: 150px;
+  height: 150px;
+  top: 280px;
+  right: 100px;
+}
+
+/* bass drum */
+.bass {
+  width: 250px;
+  height: 250px;
+  bottom: 0px;
+  right: -150px;
+  background: radial-gradient(circle at 30% 30%, #ddd, #aaa 70%, #666 100%);
+  border: 2px solid #111;
+  box-shadow: inset -10px -10px 25px rgba(0,0,0,0.5),
+              inset 8px 8px 25px rgba(255,255,255,0.15),
+              0 15px 35px rgba(0,0,0,0.9);
+}
+
+/* cymbals / extras */
+.extra {
+  background: radial-gradient(circle at 40% 40%, #ffe082, #fbc02d 70%, #f57f17 100%);
+  border: 2px solid #222;
+  box-shadow: inset -4px -4px 10px rgba(0,0,0,0.4),
+              inset 3px 3px 8px rgba(255,255,255,0.2),
+              0 6px 15px rgba(0,0,0,0.6);
+}
+#_D { top: 40px; left: 60px; width: 130px; height: 130px;}     /* hi-hat */
+#_Z { top: 40px; right: 60px; width: 190px; height: 190px;}   /* crash */
+#_X { top: 170px; left: 0px; width: 100px; height: 100px;} /* ride */
+#_C { top: 180px; right: 30px; width: 120px; height: 120px;}/* china */
+
