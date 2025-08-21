@@ -8,6 +8,22 @@
   overflow: hidden; /* keep Prism contained */
 }
 
+#display {
+  position: absolute;
+  font-family: 'Courier New', Courier, monospace;
+  top: -100px;
+  width: calc(100% - 40px);
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  z-index: 2; /* on top of everything */
+}
+
 /* make prism fill the whole background */
 .prism-container {
   position: absolute;
