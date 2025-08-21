@@ -1,0 +1,419 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0b0c10, #1f2833, #c5c6c7);
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.App::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at center, transparent 30%, #66fcf1 100%);
+  opacity: 0.05;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(15, 15, 15, 0.85);
+  padding: 2rem;
+  border-radius: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(102, 252, 241, 0.1);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #66fcf1;
+  text-shadow: 0 0 15px rgba(102, 252, 241, 0.5);
+  letter-spacing: 2px;
+  margin: 0;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #66fcf1, transparent);
+}
+
+.length-controls {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.break-controls, .session-controls {
+  background: rgba(15, 15, 15, 0.95);
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(102, 252, 241, 0.1);
+  border: 1px solid rgba(102, 252, 241, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.break-controls::before, .session-controls::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(102, 252, 241, 0.03),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.break-controls:hover::before, .session-controls:hover::before {
+  transform: translateX(100%);
+}
+
+.break-controls:hover, .session-controls:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(102, 252, 241, 0.15);
+  border-color: rgba(102, 252, 241, 0.3);
+}
+
+h2 {
+  color: #66fcf1;
+  margin-bottom: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 2px;
+  background: #66fcf1;
+  box-shadow: 0 0 10px rgba(102, 252, 241, 0.5);
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(102, 252, 241, 0.1);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #45a29e;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+button:hover::before {
+  transform: translateY(0);
+}
+
+button:hover {
+  background: #66fcf1;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(102, 252, 241, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#reset {
+  background: #ff5555;
+  box-shadow: 0 4px 15px rgba(255, 85, 85, 0.2);
+}
+
+#reset:hover {
+  background: #ff3333;
+  box-shadow: 0 5px 15px rgba(255, 85, 85, 0.4);
+}
+
+#start_stop {
+  background: rgba(102, 252, 241, 0.2);
+  box-shadow: 0 4px 15px rgba(102, 252, 241, 0.1);
+}
+
+#start_stop:hover {
+  background: rgba(102, 252, 241, 0.3);
+  box-shadow: 0 5px 20px rgba(102, 252, 241, 0.2);
+  transform: translateY(-3px);
+}
+
+#reset {
+  background: rgba(255, 85, 85, 0.2);
+  box-shadow: 0 4px 15px rgba(255, 85, 85, 0.1);
+}
+
+#reset:hover {
+  background: rgba(255, 85, 85, 0.3);
+  box-shadow: 0 5px 20px rgba(255, 85, 85, 0.2);
+  transform: translateY(-3px);
+}
+
+#break-length, #session-length {
+  font-size: 1.8rem;
+  font-weight: 600;
+  min-width: 50px;
+  text-align: center;
+  color: #66fcf1;
+  text-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(102, 252, 241, 0.1);
+}
+
+/* Clock Timer */
+.timer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.clock-face {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid #66fcf1;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 20px #66fcf1, inset 0 0 10px rgba(255,255,255,0.2);
+}
+
+#time-left {
+  font-family: 'Digital', monospace;
+  font-size: 2rem;
+  color: #66fcf1;
+  z-index: 2;
+  text-shadow: 0 0 10px #45a29e;
+  position: absolute;
+}
+
+/* Clock Hands */
+.hand {
+  width: 2px;
+  height: 50%;
+  background: #ff5555;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  border-radius: 2px;
+  transition: transform 0.5s linear;
+}
+
+.hand.minutes {
+  background: #45a29e;
+  width: 3px;
+}
+
+.hand.seconds {
+  background: #ff5555;
+  width: 2px;
+}
+
+.timer {
+  position: relative;
+  width: 250px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#timer-label {
+  margin: 1rem 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #66fcf1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  border: 1px solid rgba(102, 252, 241, 0.2);
+  order: 2;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  border: 1px solid rgba(102, 252, 241, 0.2);
+  box-shadow: 0 4px 20px rgba(102, 252, 241, 0.1);
+  backdrop-filter: blur(5px);
+  order: 3;
+}
+
+.timer-controls button {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(102, 252, 241, 0.2);
+}
+
+.clock-face {
+  order: 1;
+}
+
+@media (max-width: 600px) {
+  .clock {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .timer {
+    width: 200px;
+    height: auto;
+  }
+
+  .clock-face {
+    width: 200px;
+    height: 200px;
+  }
+
+  #time-left {
+    font-size: 1.5rem;
+  }
+
+  .length-controls {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .break-controls, .session-controls {
+    padding: 1rem 1.5rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .timer-controls {
+    padding: 0.8rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .timer-controls button {
+    width: 80px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  #timer-label {
+    font-size: 1.2rem;
+    padding: 0.4rem 1.2rem;
+  }
+
+  #break-length, #session-length {
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .clock {
+    padding: 1.5rem;
+    width: 90%;
+    margin-bottom: 3.5rem;
+  }
+
+  .timer {
+    width: 180px;
+    height: 180px;
+  }
+
+  #time-left {
+    font-size: 1.3rem;
+  }
+
+  .timer-controls {
+    bottom: -65px;
+    padding: 0.6rem 1rem;
+  }
+
+  .timer-controls button {
+    width: 70px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+}
+
