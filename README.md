@@ -1,4 +1,9 @@
 <h1 align="center" style="color: #6f42c1;">Responsive Web Design</> 
   
-![imane_haffout](https://github.com/user-attachments/assets/46e50b03-aca1-4838-9e41-ddc01fa2f88c)
+<img width="1222" height="821" alt="responsive-web-design" src="https://github.com/user-attachments/assets/9702cc92-6e57-4208-b207-0159ce7f326e" />
+<br />
+
+<h1 align="center" style="color: #6f42c1;">Front End Development Libraries</> 
+
+<img width="1221" height="820" alt="front-end-development-libraries" src="https://github.com/user-attachments/assets/1ce947b6-cd08-44ee-ac69-764e68e278d0" />
 <br />
