@@ -18,13 +18,38 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-
 // your first API endpoint... 
 app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
+// ✅ timestamp API
+app.get("/api/:date?", function (req, res) {
+  let dateString = req.params.date;
+  let date;
 
+  if (!dateString) {
+    // No date given → current date
+    date = new Date();
+  } else if (!isNaN(dateString)) {
+    // If numeric → unix timestamp
+    date = new Date(parseInt(dateString));
+  } else {
+    // Otherwise → parse date string
+    date = new Date(dateString);
+  }
+
+  // invalid date check
+  if (date.toString() === "Invalid Date") {
+    return res.json({ error: "Invalid Date" });
+  }
+
+  // valid date response
+  res.json({
+    unix: date.getTime(),
+    utc: date.toUTCString()
+  });
+});
 
 // Listen on port set in environment variable or default to 3000
 var listener = app.listen(process.env.PORT || 3000, function () {
